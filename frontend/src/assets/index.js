@@ -1,0 +1,11 @@
+export { ReactComponent as MenuSvg } from './menu.svg';
+export { ReactComponent as PlaySvg } from './play.svg';
+export { ReactComponent as PauseSvg } from './pause.svg';
+export { ReactComponent as ForwardSvg } from './forward.svg';
+export { ReactComponent as BackwardSvg } from './backward.svg';
+export { ReactComponent as CheckboxSvg } from './checkbox.svg';
+export { ReactComponent as UncheckboxSvg } from './uncheckbox.svg';
+export { default as WarningSvg } from './warning.svg';
+export { default as InfoSvg } from './info.svg';
+export { default as SuccessSvg } from './success.svg';
+export { ReactComponent as LogoSvg } from './logo.svg';

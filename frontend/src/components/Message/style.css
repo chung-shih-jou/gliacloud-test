@@ -1,0 +1,49 @@
+@keyframes appear {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    top: 20px;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+#message {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+#message > div {
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  border: 1px solid #d4d4d4;
+}
+#message > div > div {
+  padding-right: 4px;
+  margin-bottom: -2px;
+}
+#message.appear {
+  animation: appear 0.1s ease-in;
+}
+
+#message.disappear {
+  opacity: 0;
+  top: 0;
+  animation: disappear 0.1s ease-in;
+}
