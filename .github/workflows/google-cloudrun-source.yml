@@ -63,7 +63,7 @@ jobs:
           project_id: "${{ env.PROJECT_ID }}"
           # workload_identity_provider: "${{env.PROVIDER}}" # TODO: replace with your workload identity provider
           # service_account: "${{ env.SERVICE_ACCOUNT }}" # TODO: replace with your service account
-          credentials_json: "${{ secrets.GCP_SA_FILE }}"
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
 
       - name: "Deploy to Cloud Run"
         uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
