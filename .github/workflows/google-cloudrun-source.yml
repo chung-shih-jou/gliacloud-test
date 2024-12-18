@@ -30,26 +30,25 @@
 name: "Deploy to Cloud Run from Source"
 
 on:
-push:
-  branches: [main]
+  push:
+    branches: [main]
 
 env:
-PROJECT_ID: "laparirie-ticket-dev" # TODO: update to your Google Cloud project ID
-REGION: "asia-east1" # TODO: update to your region
-SERVICE: "laparirie-ticket-dev" # TODO: update to your service name
-DOCKER_IMAGE_URL: asia-east1-docker.pkg.dev/laparirie-ticket-dev/custom-fastapi/custom-fastapi
-PROVIDER: "projects/624402969975/locations/global/workloadIdentityPools/github-action/providers/github-actions"
-SERVICE_ACCOUNT: "github-actions@laparirie-ticket-dev.iam.gserviceaccount.com"
+  PROJECT_ID: "laparirie-ticket-dev" # TODO: update to your Google Cloud project ID
+  REGION: "asia-east1" # TODO: update to your region
+  SERVICE: "laparirie-ticket-dev" # TODO: update to your service name
+  DOCKER_IMAGE_URL: asia-east1-docker.pkg.dev/laparirie-ticket-dev/custom-fastapi/custom-fastapi
+  PROVIDER: "projects/624402969975/locations/global/workloadIdentityPools/github-action/providers/github-actions"
+  SERVICE_ACCOUNT: "github-actions@laparirie-ticket-dev.iam.gserviceaccount.com"
 
 jobs:
-deploy:
-  runs-on: "ubuntu-latest"
-
-  permissions:
-    contents: "read"
-    id-token: "write"
-
-  steps:
+  deploy:
+    runs-on: "ubuntu-latest"
+  
+    permissions:
+      contents: "read"
+      id-token: "write"
+  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
