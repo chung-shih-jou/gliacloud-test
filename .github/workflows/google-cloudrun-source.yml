@@ -38,6 +38,8 @@ env:
   REGION: "asia-east1" # TODO: update to your region
   SERVICE: "dev" # TODO: update to your service name
   PROVIDER: "projects/624402969975/locations/global/workloadIdentityPools/github-action/providers/github-actions"
+  SERVICE_ACCOUNT: "github-actions@laparirie-ticket-dev.iam.gserviceaccount.com"
+
 
 jobs:
   deploy:
@@ -67,7 +69,8 @@ jobs:
         uses: "google-github-actions/auth@v2"
         with:
           credentials_json: "${{ secrets.GCP_SA_KEY }}"
-          project_id: ${{ env.PROJECT_ID }}
+          project_id: "${{ env.PROJECT_ID }}"
+          service_account: "${{ env.SERVICE_ACCOUNT }}"
 
       - name: "Deploy to Cloud Run"
         uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
