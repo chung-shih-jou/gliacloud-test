@@ -57,20 +57,20 @@ jobs:
       #
       # See https://github.com/google-github-actions/auth for more options,
       # including authenticating via a JSON credentials file.
-      # - id: "auth"
-      #   name: "Authenticate to Google Cloud"
-      #   uses: "google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2" # google-github-actions/auth@v2
-      #   with:
-      #     project_id: "${{ env.PROJECT_ID }}"
-      #     workload_identity_provider: "${{env.PROVIDER}}" # TODO: replace with your workload identity provider
-      #     service_account: "${{ env.SERVICE_ACCOUNT }}" # TODO: replace with your service account
-
-      - name: Google Cloud Auth
-        uses: "google-github-actions/auth@v2"
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2" # google-github-actions/auth@v2
         with:
-          credentials_json: "${{ secrets.GCP_SA_KEY }}"
           project_id: "${{ env.PROJECT_ID }}"
-          service_account: "${{ env.SERVICE_ACCOUNT }}"
+          workload_identity_provider: "${{env.PROVIDER}}" # TODO: replace with your workload identity provider
+          service_account: "${{ env.SERVICE_ACCOUNT }}" # TODO: replace with your service account
+
+      # - name: Google Cloud Auth
+      #   uses: "google-github-actions/auth@v2"
+      #   with:
+      #     credentials_json: "${{ secrets.GCP_SA_KEY }}"
+      #     project_id: "${{ env.PROJECT_ID }}"
+      #     service_account: "${{ env.SERVICE_ACCOUNT }}"
 
       - name: "Deploy to Cloud Run"
         uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
