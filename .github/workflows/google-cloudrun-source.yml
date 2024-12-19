@@ -61,7 +61,6 @@ jobs:
           project_id: "${{ env.PROJECT_ID }}"
           workload_identity_provider: "${{secrets.PROVIDER}}" # TODO: replace with your workload identity provider
           service_account: "${{ secrets.SERVICE_ACCOUNT }}" # TODO: replace with your service account
-          token_format: 'access_token'
 
       - name: "Deploy to Cloud Run"
         uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
